@@ -1,162 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Presentación del Equipo PIXES</title>
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #4f46e5, #06b6d4);
-    color: #333;
-  }
-  header {
-    background: rgba(0,0,0,0.7);
-    color: white;
-    text-align: center;
-    padding: 30px;
-  }
-  header h1 {
-    margin: 0;
-    font-size: 32px;
-  }
-  header p {
-    margin-top: 8px;
-    font-size: 18px;
-  }
-  .intro {
-    background: #fff;
-    margin: 20px auto;
-    max-width: 900px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  .intro h2 {
-    text-align: center;
-    color: #4f46e5;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
-  }
-  .card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    text-align: center;
-    padding: 15px;
-    transition: transform 0.3s;
-  }
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  .card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border: 3px solid #4f46e5;
-  }
-  .name {
-    font-weight: bold;
-    font-size: 18px;
-    margin: 10px 0 5px;
-  }
-  .role {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-  .hobbies {
-    font-size: 12px;
-    color: #888;
-    margin-top: 5px;
-  }
-  footer {
-    text-align: center;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    padding: 15px;
-    margin-top: 30px;
-    font-size: 14px;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía sobre AWS CodeCommit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #0073e6;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #e7f3fe;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .integrantes {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f0f8ff;
+            border-left: 5px solid #0073e6;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #999;
+        }
+    </style>
 </head>
 <body>
-<header>
-  <h1>Equipo de Trabajo — PIXES</h1>
-  <p>Unidos por la innovación, el esfuerzo y la creatividad</p>
-</header>
+    <div class="container">
+        <h1>AWS CodeCommit</h1>
 
-<section class="intro">
-  <h2>Presentación</h2>
-  <p>
-    Somos el equipo <strong>PIXES</strong>, conformado por cinco integrantes apasionados 
-    por la tecnología, el diseño y la gestión de proyectos. Nuestra misión es 
-    desarrollar soluciones innovadoras que aporten valor a los usuarios y 
-    mejoren su experiencia en el entorno digital.
-  </p>
-  <p>
-    Como equipo, nos enfocamos en la colaboración, la responsabilidad compartida y 
-    el aprendizaje constante. Cada miembro cumple un rol clave, aportando desde 
-    su especialidad para lograr un resultado conjunto de calidad.
-  </p>
-</section>
+        <!-- Sección de Integrantes -->
+        <div class="integrantes">
+            <h2>Integrantes del equipo</h2>
+            <ul>
+                <li>Jose Yohel Huaca Palomino</li>
+                <li>Grimaldo Huacho Criollo</li>
+            </ul>
+        </div>
 
-<section class="grid">
-  <!-- Miembro 1 -->
-  <div class="card">
-    <img src="img/grimaldo.jpg" alt="Grimaldo">
-    <div class="name">Grimaldo</div>
-    <div class="role">Líder de Proyecto</div>
-    <div class="hobbies">Hobbies: Fotografía, Senderismo</div>
-  </div>
-
-  <!-- Miembro 2 -->
-  <div class="card">
-    <img src="img/jose.jpg" alt="Jose Yohel">
-    <div class="name">Jose Yohel</div>
-    <div class="role">Desarrollador Frontend</div>
-    <div class="hobbies">Hobbies: Videojuegos, Ciclismo</div>
-  </div>
-
-  <!-- Miembro 3 -->
-  <div class="card">
-    <img src="img/irving.jpg" alt="Irving">
-    <div class="name">Irving</div>
-    <div class="role">Diseñador UX/UI</div>
-    <div class="hobbies">Hobbies: Dibujo, Música</div>
-  </div>
-
-  <!-- Miembro 4 -->
-  <div class="card">
-    <img src="img/aldair.jpg" alt="Aldair Fabricio">
-    <div class="name">Aldair Fabricio</div>
-    <div class="role">Administrador de Base de Datos</div>
-    <div class="hobbies">Hobbies: Programación, Juegos de Mesa</div>
-  </div>
-
-  <!-- Miembro 5 -->
-  <div class="card">
-    <img src="img/david.jpg" alt="David">
-    <div class="name">David</div>
-    <div class="role">Coordinador de Comunicación</div>
-    <div class="hobbies">Hobbies: Lectura, Fotografía</div>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2025 — Equipo PIXES. Todos los derechos reservados.</p>
-</footer>
+        <h2>¿Qué es?</h2>
+        <p>AWS CodeCommit es un servicio de control de versiones basado en la nube que permite a los desarrolladores almacenar y gestionar su código fuente de forma segura y escalable.</p>
+        
+        <h2>Características Principales</h2>
+        <ul>
+            <li><strong>Almacenamiento Seguro:</strong> Encriptación en reposo y en tránsito.</li>
+            <li><strong>Escalabilidad:</strong> Maneja repositorios de cualquier tamaño.</li>
+            <li><strong>Integración con AWS:</strong> Se integra con otros servicios como Lambda y CodePipeline.</li>
+            <li><strong>Soporte para Git:</strong> Utiliza el protocolo Git.</li>
+            <li><strong>Colaboración:</strong> Permite trabajo simultáneo de múltiples desarrolladores.</li>
+            <li><strong>Control de Acceso:</strong> Políticas de IAM para definir permisos.</li>
+            <li><strong>Notificaciones:</strong> Integración con Amazon SNS.</li>
+        </ul>
+        
+        <h2>Beneficios</h2>
+        <ul>
+            <li>Costo efectivo con pago por uso.</li>
+            <li>Alta disponibilidad y durabilidad de datos.</li>
+            <li>Fácil de usar con documentación extensa.</li>
+            <li>Sin necesidad de mantenimiento de infraestructura.</li>
+        </ul>
+        
+        <h2>Cómo Configurarlo</h2>
+        <p>1. Crear un repositorio en la consola de AWS.</p>
+        <p>2. Configurar credenciales de acceso en IAM.</p>
+        <p>3. Clonar el repositorio usando Git.</p>
+        <p>4. Realizar cambios y hacer push al repositorio.</p>
+        
+        <footer>
+            <p>Fuente: AWS</p>
+        </footer>
+    </div>
 </body>
 </html>
-
-
-
