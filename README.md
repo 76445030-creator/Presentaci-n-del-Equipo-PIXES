@@ -36,6 +36,13 @@
             padding: 10px;
             border-radius: 5px;
         }
+        .integrantes {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f0f8ff;
+            border-left: 5px solid #0073e6;
+            border-radius: 5px;
+        }
         footer {
             text-align: center;
             margin-top: 20px;
@@ -47,6 +54,16 @@
 <body>
     <div class="container">
         <h1>AWS CodeCommit</h1>
+
+        <!-- Sección de Integrantes -->
+        <div class="integrantes">
+            <h2>Integrantes del equipo</h2>
+            <ul>
+                <li>Jose Yohel Huaca Palomino</li>
+                <li>Grimaldo Huacho Criollo</li>
+            </ul>
+        </div>
+
         <h2>¿Qué es?</h2>
         <p>AWS CodeCommit es un servicio de control de versiones basado en la nube que permite a los desarrolladores almacenar y gestionar su código fuente de forma segura y escalable.</p>
         
@@ -81,3 +98,4 @@
     </div>
 </body>
 </html>
+
