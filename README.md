@@ -3,241 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografía Extendida: Regresión Logística para Clasificación de Imágenes (Gato vs. Perro)</title>
+    <title>Infografía Pixelada: Modo Juego en Cuadritos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f7f9;
-            color: #333;
+            font-family: 'Press Start 2P', monospace;
+            background-color: #000000;
+            color: #00FF00;
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        .infographic-container {
-            max-width: 1100px;
-            margin: 40px auto;
-            background-color: #ffffff;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        header {
-            background: linear-gradient(90deg, #1a73e8, #0049b7);
-            color: white;
-            padding: 30px;
-            text-align: center;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-        }
-
-        header h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.4em;
-            font-weight: 700;
-        }
-
-        header p {
-            margin: 5px 0 0 0;
-            font-size: 1.1em;
-            font-weight: 300;
-        }
-
-        .integrantes {
-            background-color: #0c62e1;
-            padding: 10px;
-            font-size: 1em;
-            font-weight: 600;
-        }
-
-        .integrantes span {
-            display: block;
-            margin-top: 5px;
-        }
-
-        .content-section {
-            padding: 30px;
-        }
-
-        h2 {
-            color: #1a73e8;
-            border-bottom: 3px solid #e0e0e0;
-            padding-bottom: 10px;
-            margin-top: 30px;
-            font-weight: 600;
-            font-size: 1.8em;
-        }
-
-        .highlight {
-            background-color: #e8f0fe;
-            border-left: 5px solid #1a73e8;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 8px;
-            font-weight: 500;
-        }
-
-        .formula {
-            background: #000;
-            color: #0f0;
-            font-family: monospace;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 1.2em;
-            text-align: center;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .step {
-            background: #fff3e0;
-            border: 1px solid #ffb74d;
-            border-radius: 8px;
             padding: 20px;
-            text-align: center;
-        }
-
-        .step h4 {
-            color: #e65100;
-            margin-top: 0;
-        }
-
-        .pros-cons {
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-
-        .pros, .cons {
-            flex: 1;
+        .game-container {
+            max-width: 900px;
+            background-color: #111111;
+            border: 4px solid #FFFF00;
             padding: 20px;
-            border-radius: 8px;
+            box-shadow: 0 0 20px #00FF00;
+            border-radius: 0;
         }
-
-        .pros {
-            background-color: #e6f4ea;
-            border: 2px solid #34a853;
+        .header {
+            text-align: center;
+            color: #FFFF00;
+            font-size: 14px;
+            margin-bottom: 20px;
         }
-
-        .cons {
-            background-color: #fce8e6;
-            border: 2px solid #ea4335;
+        .academic-header {
+            background-color: #222222;
+            border: 2px solid #00FFFF;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 8px;
+            line-height: 1.5;
         }
-
-        .pros h3, .cons h3 {
-            margin-top: 0;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, auto);
+            gap: 15px;
         }
-
-        .applications {
-            background-color: #f1f3f4;
-            padding: 20px;
-            border-radius: 8px;
+        .cuadrito {
+            background-color: #333333;
+            border: 2px solid #FF0000;
+            padding: 25px;
+            text-align: center;
+            border-radius: 0;
+            box-shadow: 0 0 10px #FF0000;
+            display: none;
         }
-
-        .applications ul {
-            padding-left: 20px;
+        .cuadrito.active {
+            display: block;
         }
-
-        .applications li {
-            margin-bottom: 8px;
+        .cuadrito h2 {
+            color: #00FFFF;
+            font-size: 12px;
+            margin: 0 0 10px 0;
+        }
+        .emoji {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .content {
+            display: none;
+            font-size: 9px;
+            line-height: 1.4;
+            margin-top: 10px;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 8px;
+        }
+        .table th, .table td {
+            border: 1px solid #FFFF00;
+            padding: 5px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        .table th {
+            background-color: #444444;
+        }
+        .chart {
+            font-size: 8px;
+            color: #00FF00;
+            margin: 10px 0;
+            text-align: left;
+        }
+        .btn {
+            background-color: #007BFF;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            padding: 6px 12px;
+            font-size: 8px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover {
+            background-color: #0056B3;
+        }
+        .score {
+            text-align: center;
+            font-size: 12px;
+            color: #FFFF00;
+            margin: 10px 0;
+        }
+        .footer {
+            text-align: center;
+            font-size: 8px;
+            color: #AAAAAA;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-
-<div class="infographic-container">
-    <header>
-        <h1>ANÁLISIS DE CLASIFICACIÓN DE IMÁGENES (GATO 🐱 vs. PERRO 🐶)</h1>
-        <p>Modelo de Regresión Logística aplicado sobre un Dataset de Imágenes Simuladas</p>
-        <div class="integrantes">
-            <strong>👥 Integrantes:</strong> 
-            <span>➡️ José Yohel Huanca Palomino</span>
-            <span>➡️ Grimaldo Huacho Criollo</span>
-            <span>➡️ Aldair Fabricio Condori Umpire</span>
-            <span>➡️ Hirving Rodrigo Paiva Paredes</span>
+    <div class="game-container">
+        <div class="header">
+            🎮 MODO JUEGO EN CUADRITOS: Reconocimiento Facial 🎮<br>
+            ¡Desbloquea cuadritos y gana puntos! 🤖
         </div>
-    </header>
-
-    <div class="content-section">
-
-        <h2>📌 Introducción</h2>
-        <div class="highlight">
-            La **clasificación binaria** consiste en asignar a cada muestra una de dos categorías posibles.  
-            En este caso, el reto es distinguir entre **imágenes de gatos (0)** y **perros (1)** utilizando un modelo matemático sencillo: **Regresión Logística**.
+        
+        <div class="academic-header">
+            INTEGRANTES:<br>
+            1)Huanca Palomino Jose Yohel,<br>
+            2) Huacho Criollo Grimaldo, <br>
+            3)Paiva Paredes Hirving Rodrigo,<br>
+            4)Condori Umpire Aldair Fabricio
         </div>
-
-        <h2>📖 ¿Qué es la Regresión Logística?</h2>
-        <p>La regresión logística es un modelo estadístico que utiliza una función sigmoide para estimar la probabilidad de que una muestra pertenezca a una clase determinada.</p>
-        <div class="formula">
-            P(Y=1|X) = 1 / (1 + e<sup>-z</sup>)  
-            donde z = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ
+        
+        <div class="score" id="score">Puntuación: 0 / 600</div>
+        
+        <div class="grid">
+            <div id="cuadrito1" class="cuadrito active">
+                <div class="emoji">🤖</div>
+                <h2>Nivel 1: Resumen</h2>
+                <button class="btn" onclick="toggleContent('content1')">Ver Detalles</button>
+                <div id="content1" class="content">
+                    Sistema de reconocimiento facial basado en redes neuronales convolucionales (CNN) para identificar integrantes del equipo vía cámara móvil. Metodología CRISP-ML aplicada. Precisión final: 100%, Pérdida: 0.0007. Dataset: 200 imágenes reales de 2 personas. Alto rendimiento en generalización.
+                    <table class="table">
+                        <tr><th>Métrica</th><th>Valor</th></tr>
+                        <tr><td>Precisión</td><td>100%</td></tr>
+                        <tr><td>Pérdida</td><td>0.0007</td></tr>
+                        <tr><td>Validación</td><td>96.55%</td></tr>
+                    </table>
+                </div>
+                <button class="btn" onclick="nextCuadrito(1)">Avanzar 🚀</button>
+            </div>
+            
+            <div id="cuadrito2" class="cuadrito">
+                <div class="emoji">👤</div>
+                <h2>Nivel 2: Intro</h2>
+                <button class="btn" onclick="toggleContent('content2')">Ver Detalles</button>
+                <div id="content2" class="content">
+                    Reconocimiento facial con IA y CNN para análisis automático de rasgos faciales. Avances en Deep Learning permiten precisión en dispositivos móviles. Proyecto desarrollado por el grupo para identificar rostros en tiempo real. Aplicaciones educativas: asistencia automática, control de ingreso y validación de identidad. Entrenado con imágenes reales capturadas desde cámara.
+                </div>
+                <button class="btn" onclick="nextCuadrito(2)">Avanzar 🚀</button>
+            </div>
+            
+            <div id="cuadrito3" class="cuadrito">
+                <div class="emoji">📊</div>
+                <h2>Nivel 3: Metodología</h2>
+                <button class="btn" onclick="toggleContent('content3')">Ver Detalles</button>
+                <div id="content3" class="content">
+                    Seguido CRISP-ML: Comprensión negocio (precisión >90%, tiempo <500ms), Comprensión datos (200 imágenes, 224x224px, calidad verificada), Preparación datos (detección Haar Cascade, redimensionamiento 128x128, normalización [0,1], augmentación con rotaciones/reflejos/zoom), Modelado (CNN en Google Colab/TensorFlow/Keras, capas 32/64/128 filtros, pooling/dropout, softmax binaria, 30 épocas, optimizador Adam, pérdida categorical crossentropy), Evaluación (convergencia rápida, métricas monitoreadas).
+                    <table class="table">
+                        <tr><th>Fase CRISP-ML</th><th>Descripción</th></tr>
+                        <tr><td>Comprensión Negocio</td><td>Objetivos y criterios de éxito</td></tr>
+                        <tr><td>Comprensión Datos</td><td>Recolección y calidad de imágenes</td></tr>
+                        <tr><td>Preparación Datos</td><td>Preprocesamiento y augmentación</td></tr>
+                        <tr><td>Modelado</td><td>Entrenamiento CNN</td></tr>
+                        <tr><td>Evaluación</td><td>Métricas y validación</td></tr>
+                        <tr><td>Despliegue</td><td>Conversión a móvil</td></tr>
+                    </table>
+                    <div class="chart">Dataset: 70% ████████ Train, 15% ███ Val, 15% ███ Test</div>
+                </div>
+                <button class="btn" onclick="nextCuadrito(3)">Avanzar 🚀</button>
+            </div>
+            
+            <div id="cuadrito4" class="cuadrito">
+                <div class="emoji">📈</div>
+                <h2>Nivel 4: Resultados</h2>
+                <button class="btn" onclick="toggleContent('content4')">Ver Detalles</button>
+                <div id="content4" class="content">
+                    Entrenamiento con convergencia rápida. Resultados finales: Precisión (accuracy) 100%, Pérdida (loss) 0.0007, Precisión validación 96.55%. Modelo guardado como modelo_final.h5. Gráfica muestra reducción continua de pérdida. Alto desempeño en Test Set, matriz de confusión indica clasificación precisa. Rendimiento sobresaliente y generalización buena.
+                    <h3>Matriz de Confusión</h3>
+                    <table class="table">
+                        <tr><th>Predicho/Real</th><th>Persona 1</th><th>Persona 2</th></tr>
+                        <tr><td>Persona 1</td><td>100%</td><td>0%</td></tr>
+                        <tr><td>Persona 2</td><td>0%</td><td>100%</td></tr>
+                    </table>
+                    <div class="chart">Gráfica de Aprendizaje (Pérdida vs Épocas):<br>Época 0: ██████████ 1.0<br>Época 10: ███████ 0.5<br>Época 20: ███ 0.2<br>Época 30: █ 0.0007</div>
+                </div>
+                <button class="btn" onclick="nextCuadrito(4)">Avanzar 🚀</button>
+            </div>
+            
+            <div id="cuadrito5" class="cuadrito">
+                <div class="emoji">📱</div>
+                <h2>Nivel 5: Despliegue</h2>
+                <button class="btn" onclick="toggleContent('content5')">Ver Detalles</button>
+                <div id="content5" class="content">
+                    Modelo convertido a TensorFlow Lite (TFLite) para móviles Android, reduciendo tamaño y optimizando rendimiento. Lenguajes: Python/TensorFlow 2.x para entrenamiento/exportación, Android Studio (Java/Kotlin) para app. Archivos generados: faceid_model.tflite (12.44 MB), labels.txt, android_test_code.txt. Optimización con delegado XNNPACK para CPU, latencia 120-150ms por predicción. Reconocimiento fluido en tiempo real.
+                </div>
+                <button class="btn" onclick="nextCuadrito(5)">Avanzar 🚀</button>
+            </div>
+            
+            <div id="cuadrito6" class="cuadrito">
+                <div class="emoji">🏆</div>
+                <h2>Nivel 6: Conclusiones</h2>
+                <button class="btn" onclick="toggleContent('content6')">Ver Detalles</button>
+                <div id="content6" class="content">
+                    Proyecto logró sistema de reconocimiento facial con CNN, precisión 100% y rendimiento estable. Metodología CRISP-ML permitió desarrollo ordenado. Despliegue en TFLite exitoso para móviles Android con respuesta rápida. Trabajo futuro: Ampliar dataset con más rostros, aplicar transfer learning con modelos preentrenados, mejorar interfaz móvil con registro y verificación en tiempo real.
+                </div>
+                <button class="btn" onclick="endGame()">¡Completado! 🎉</button>
+            </div>
         </div>
-
-        <h2>🖼️ Proceso de Entrenamiento</h2>
-        <div class="process-steps">
-            <div class="step">
-                <h4>1️⃣ Dataset</h4>
-                <p>Imágenes simuladas de gatos y perros con tamaño <strong>64x64</strong> pixeles.</p>
-            </div>
-            <div class="step">
-                <h4>2️⃣ Preprocesamiento</h4>
-                <p>Se aplanan las imágenes en vectores de <strong>4096</strong> características.</p>
-            </div>
-            <div class="step">
-                <h4>3️⃣ Entrenamiento</h4>
-                <p>El modelo aprende ajustando pesos (β) mediante máxima verosimilitud.</p>
-            </div>
-            <div class="step">
-                <h4>4️⃣ Predicción</h4>
-                <p>Se aplica la función sigmoide para clasificar nuevas imágenes.</p>
-            </div>
-            <div class="step">
-                <h4>5️⃣ Evaluación</h4>
-                <p>Se mide la efectividad con <strong>Accuracy</strong>, <strong>Matriz de Confusión</strong> y <strong>Reporte de Clasificación</strong>.</p>
-            </div>
+        
+        <div id="gameOver" style="display: none; text-align: center; margin-top: 20px;">
+            <h2>🎉 GAME OVER: ¡Felicidades! 🎉</h2>
+            <div>Puntuación Final: 600/600. Proyecto exitoso. 🏅</div>
         </div>
-
-        <h2>⚖️ Ventajas y Desventajas</h2>
-        <div class="pros-cons">
-            <div class="pros">
-                <h3>✅ Ventajas</h3>
-                <ul>
-                    <li>Modelo sencillo y fácil de interpretar.</li>
-                    <li>Requiere poco poder computacional.</li>
-                    <li>Útil como línea base para problemas de clasificación.</li>
-                </ul>
-            </div>
-            <div class="cons">
-                <h3>❌ Desventajas</h3>
-                <ul>
-                    <li>No captura relaciones no lineales complejas.</li>
-                    <li>Limitado para imágenes donde la relación espacial es clave.</li>
-                    <li>Propenso al sobreajuste si hay muchas variables (como píxeles).</li>
-                </ul>
-            </div>
+        
+        <div class="footer">
+            Infografía Pixelada en Cuadritos | Cusco-Perú 2025
         </div>
-
-        <h2>🌐 Aplicaciones en la Vida Real</h2>
-        <div class="applications">
-            <ul>
-                <li>📧 Detección de correos **spam vs. no spam**.</li>
-                <li>🏥 Diagnóstico médico (ej. enfermedad presente o no presente).</li>
-                <li>💳 Detección de fraudes en transacciones financieras.</li>
-                <li>📷 Clasificación básica de imágenes.</li>
-                <li>🗳️ Predicción de resultados en encuestas electorales.</li>
-            </ul>
-        </div>
-
     </div>
-</div>
 
+    <script>
+        let currentCuadrito = 1;
+        let score = 0;
+        const maxScore = 600;
+
+        function toggleContent(id) {
+            const element = document.getElementById(id);
+            element.style.display = element.style.display === 'block' ? 'none' : 'block';
+            if (element.style.display === 'block') {
+                score += 100;
+                updateScore();
+            }
+        }
+
+        function nextCuadrito(cuadrito) {
+            document.getElementById('cuadrito' + cuadrito).classList.remove('active');
+            currentCuadrito++;
+            document.getElementById('cuadrito' + currentCuadrito).classList.add('active');
+        }
+
+        function endGame() {
+            document.getElementById('cuadrito6').classList.remove('active');
+            document.getElementById('gameOver').style.display = 'block';
+            score = maxScore;
+            updateScore();
+        }
+
+        function updateScore() {
+            document.getElementById('score').textContent = 'Puntuación: ' + score + ' / ' + maxScore;
+        }
+    </script>
 </body>
 </html>
