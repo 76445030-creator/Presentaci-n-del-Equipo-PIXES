@@ -1,161 +1,267 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Presentación del Equipo PIXES</title>
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #4f46e5, #06b6d4);
-    color: #333;
-  }
-  header {
-    background: rgba(0,0,0,0.7);
-    color: white;
-    text-align: center;
-    padding: 30px;
-  }
-  header h1 {
-    margin: 0;
-    font-size: 32px;
-  }
-  header p {
-    margin-top: 8px;
-    font-size: 18px;
-  }
-  .intro {
-    background: #fff;
-    margin: 20px auto;
-    max-width: 900px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  .intro h2 {
-    text-align: center;
-    color: #4f46e5;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
-  }
-  .card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    text-align: center;
-    padding: 15px;
-    transition: transform 0.3s;
-  }
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  .card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border: 3px solid #4f46e5;
-  }
-  .name {
-    font-weight: bold;
-    font-size: 18px;
-    margin: 10px 0 5px;
-  }
-  .role {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-  .hobbies {
-    font-size: 12px;
-    color: #888;
-    margin-top: 5px;
-  }
-  footer {
-    text-align: center;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    padding: 15px;
-    margin-top: 30px;
-    font-size: 14px;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía Pixelada: Modo Juego en Cuadritos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', monospace;
+            background-color: #000000;
+            color: #00FF00;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .game-container {
+            max-width: 900px;
+            background-color: #111111;
+            border: 4px solid #FFFF00;
+            padding: 20px;
+            box-shadow: 0 0 20px #00FF00;
+            border-radius: 0;
+        }
+        .header {
+            text-align: center;
+            color: #FFFF00;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .academic-header {
+            background-color: #222222;
+            border: 2px solid #00FFFF;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 8px;
+            line-height: 1.5;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, auto);
+            gap: 15px;
+        }
+        .cuadrito {
+            background-color: #333333;
+            border: 2px solid #FF0000;
+            padding: 25px;
+            text-align: center;
+            border-radius: 0;
+            box-shadow: 0 0 10px #FF0000;
+            display: none;
+        }
+        .cuadrito.active {
+            display: block;
+        }
+        .cuadrito h2 {
+            color: #00FFFF;
+            font-size: 12px;
+            margin: 0 0 10px 0;
+        }
+        .emoji {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .content {
+            display: none;
+            font-size: 9px;
+            line-height: 1.4;
+            margin-top: 10px;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 8px;
+        }
+        .table th, .table td {
+            border: 1px solid #FFFF00;
+            padding: 5px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        .table th {
+            background-color: #444444;
+        }
+        .chart {
+            font-size: 8px;
+            color: #00FF00;
+            margin: 10px 0;
+            text-align: left;
+        }
+        .btn {
+            background-color: #007BFF;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            padding: 6px 12px;
+            font-size: 8px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover {
+            background-color: #0056B3;
+        }
+        .score {
+            text-align: center;
+            font-size: 12px;
+            color: #FFFF00;
+            margin: 10px 0;
+        }
+        .footer {
+            text-align: center;
+            font-size: 8px;
+            color: #AAAAAA;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-<header>
-  <h1>Equipo de Trabajo — PIXES</h1>
-  <p>Unidos por la innovación, el esfuerzo y la creatividad</p>
-</header>
+    <div class="game-container">
+        <div class="header">
+            🎮 MODO JUEGO EN CUADRITOS: Reconocimiento Facial 🎮<br>
+            ¡Desbloquea cuadritos y gana puntos! 🤖
+        </div>
+        
+        <div class="academic-header">
+            INTEGRANTES:<br>
+            1)Huanca Palomino Jose Yohel,<br>
+            2) Huacho Criollo Grimaldo, <br>
+            3)Paiva Paredes Hirving Rodrigo,<br>
+            4)Condori Umpire Aldair Fabricio
+        </div>
+        
+        <div class="score" id="score">Puntuación: 0 / 600</div>
+        
+        <div class="grid">
+            <div id="cuadrito1" class="cuadrito active">
+                <div class="emoji">🤖</div>
+                <h2>Nivel 1: Resumen</h2>
+                <button class="btn" onclick="toggleContent('content1')">Ver Detalles</button>
+                <div id="content1" class="content">
+                    Sistema de reconocimiento facial basado en redes neuronales convolucionales (CNN) para identificar integrantes del equipo vía cámara móvil. Metodología CRISP-ML aplicada. Precisión final: 100%, Pérdida: 0.0007. Dataset: 200 imágenes reales de 2 personas. Alto rendimiento en generalización.
+                    <table class="table">
+                        <tr><th>Métrica</th><th>Valor</th></tr>
+                        <tr><td>Precisión</td><td>100%</td></tr>
+                        <tr><td>Pérdida</td><td>0.0007</td></tr>
+                        <tr><td>Validación</td><td>96.55%</td></tr>
+                    </table>
+                </div>
+                <button class="btn" onclick="nextCuadrito(1)">Avanzar 🚀</button>
+            </div>
+            
+            <div id="cuadrito2" class="cuadrito">
+                <div class="emoji">👤</div>
+                <h2>Nivel 2: Intro</h2>
+                <button class="btn" onclick="toggleContent('content2')">Ver Detalles</button>
+                <div id="content2" class="content">
+                    Reconocimiento facial con IA y CNN para análisis automático de rasgos faciales. Avances en Deep Learning permiten precisión en dispositivos móviles. Proyecto desarrollado por el grupo para identificar rostros en tiempo real. Aplicaciones educativas: asistencia automática, control de ingreso y validación de identidad. Entrenado con imágenes reales capturadas desde cámara.
+                </div>
+                <button class="btn" onclick="nextCuadrito(2)">Avanzar 🚀</button>
+            </div>
+            
+            <div id="cuadrito3" class="cuadrito">
+                <div class="emoji">📊</div>
+                <h2>Nivel 3: Metodología</h2>
+                <button class="btn" onclick="toggleContent('content3')">Ver Detalles</button>
+                <div id="content3" class="content">
+                    Seguido CRISP-ML: Comprensión negocio (precisión >90%, tiempo <500ms), Comprensión datos (200 imágenes, 224x224px, calidad verificada), Preparación datos (detección Haar Cascade, redimensionamiento 128x128, normalización [0,1], augmentación con rotaciones/reflejos/zoom), Modelado (CNN en Google Colab/TensorFlow/Keras, capas 32/64/128 filtros, pooling/dropout, softmax binaria, 30 épocas, optimizador Adam, pérdida categorical crossentropy), Evaluación (convergencia rápida, métricas monitoreadas).
+                    <table class="table">
+                        <tr><th>Fase CRISP-ML</th><th>Descripción</th></tr>
+                        <tr><td>Comprensión Negocio</td><td>Objetivos y criterios de éxito</td></tr>
+                        <tr><td>Comprensión Datos</td><td>Recolección y calidad de imágenes</td></tr>
+                        <tr><td>Preparación Datos</td><td>Preprocesamiento y augmentación</td></tr>
+                        <tr><td>Modelado</td><td>Entrenamiento CNN</td></tr>
+                        <tr><td>Evaluación</td><td>Métricas y validación</td></tr>
+                        <tr><td>Despliegue</td><td>Conversión a móvil</td></tr>
+                    </table>
+                    <div class="chart">Dataset: 70% ████████ Train, 15% ███ Val, 15% ███ Test</div>
+                </div>
+                <button class="btn" onclick="nextCuadrito(3)">Avanzar 🚀</button>
+            </div>
+            
+            <div id="cuadrito4" class="cuadrito">
+                <div class="emoji">📈</div>
+                <h2>Nivel 4: Resultados</h2>
+                <button class="btn" onclick="toggleContent('content4')">Ver Detalles</button>
+                <div id="content4" class="content">
+                    Entrenamiento con convergencia rápida. Resultados finales: Precisión (accuracy) 100%, Pérdida (loss) 0.0007, Precisión validación 96.55%. Modelo guardado como modelo_final.h5. Gráfica muestra reducción continua de pérdida. Alto desempeño en Test Set, matriz de confusión indica clasificación precisa. Rendimiento sobresaliente y generalización buena.
+                    <h3>Matriz de Confusión</h3>
+                    <table class="table">
+                        <tr><th>Predicho/Real</th><th>Persona 1</th><th>Persona 2</th></tr>
+                        <tr><td>Persona 1</td><td>100%</td><td>0%</td></tr>
+                        <tr><td>Persona 2</td><td>0%</td><td>100%</td></tr>
+                    </table>
+                    <div class="chart">Gráfica de Aprendizaje (Pérdida vs Épocas):<br>Época 0: ██████████ 1.0<br>Época 10: ███████ 0.5<br>Época 20: ███ 0.2<br>Época 30: █ 0.0007</div>
+                </div>
+                <button class="btn" onclick="nextCuadrito(4)">Avanzar 🚀</button>
+            </div>
+            
+            <div id="cuadrito5" class="cuadrito">
+                <div class="emoji">📱</div>
+                <h2>Nivel 5: Despliegue</h2>
+                <button class="btn" onclick="toggleContent('content5')">Ver Detalles</button>
+                <div id="content5" class="content">
+                    Modelo convertido a TensorFlow Lite (TFLite) para móviles Android, reduciendo tamaño y optimizando rendimiento. Lenguajes: Python/TensorFlow 2.x para entrenamiento/exportación, Android Studio (Java/Kotlin) para app. Archivos generados: faceid_model.tflite (12.44 MB), labels.txt, android_test_code.txt. Optimización con delegado XNNPACK para CPU, latencia 120-150ms por predicción. Reconocimiento fluido en tiempo real.
+                </div>
+                <button class="btn" onclick="nextCuadrito(5)">Avanzar 🚀</button>
+            </div>
+            
+            <div id="cuadrito6" class="cuadrito">
+                <div class="emoji">🏆</div>
+                <h2>Nivel 6: Conclusiones</h2>
+                <button class="btn" onclick="toggleContent('content6')">Ver Detalles</button>
+                <div id="content6" class="content">
+                    Proyecto logró sistema de reconocimiento facial con CNN, precisión 100% y rendimiento estable. Metodología CRISP-ML permitió desarrollo ordenado. Despliegue en TFLite exitoso para móviles Android con respuesta rápida. Trabajo futuro: Ampliar dataset con más rostros, aplicar transfer learning con modelos preentrenados, mejorar interfaz móvil con registro y verificación en tiempo real.
+                </div>
+                <button class="btn" onclick="endGame()">¡Completado! 🎉</button>
+            </div>
+        </div>
+        
+        <div id="gameOver" style="display: none; text-align: center; margin-top: 20px;">
+            <h2>🎉 GAME OVER: ¡Felicidades! 🎉</h2>
+            <div>Puntuación Final: 600/600. Proyecto exitoso. 🏅</div>
+        </div>
+        
+        <div class="footer">
+            Infografía Pixelada en Cuadritos | Cusco-Perú 2025
+        </div>
+    </div>
 
-<section class="intro">
-  <h2>Presentación</h2>
-  <p>
-    Somos el equipo <strong>PIXES</strong>, conformado por cinco integrantes apasionados 
-    por la tecnología, el diseño y la gestión de proyectos. Nuestra misión es 
-    desarrollar soluciones innovadoras que aporten valor a los usuarios y 
-    mejoren su experiencia en el entorno digital.
-  </p>
-  <p>
-    Como equipo, nos enfocamos en la colaboración, la responsabilidad compartida y 
-    el aprendizaje constante. Cada miembro cumple un rol clave, aportando desde 
-    su especialidad para lograr un resultado conjunto de calidad.
-  </p>
-</section>
+    <script>
+        let currentCuadrito = 1;
+        let score = 0;
+        const maxScore = 600;
 
-<section class="grid">
-  <!-- Miembro 1 -->
-  <div class="card">
-    <img src="img/grimaldo.jpg" alt="Grimaldo">
-    <div class="name">Grimaldo</div>
-    <div class="role">Líder de Proyecto</div>
-    <div class="hobbies">Hobbies: Fotografía, Senderismo</div>
-  </div>
+        function toggleContent(id) {
+            const element = document.getElementById(id);
+            element.style.display = element.style.display === 'block' ? 'none' : 'block';
+            if (element.style.display === 'block') {
+                score += 100;
+                updateScore();
+            }
+        }
 
-  <!-- Miembro 2 -->
-  <div class="card">
-    <img src="img/jose.jpg" alt="Jose Yohel">
-    <div class="name">Jose Yohel</div>
-    <div class="role">Desarrollador Frontend</div>
-    <div class="hobbies">Hobbies: Videojuegos, Ciclismo</div>
-  </div>
+        function nextCuadrito(cuadrito) {
+            document.getElementById('cuadrito' + cuadrito).classList.remove('active');
+            currentCuadrito++;
+            document.getElementById('cuadrito' + currentCuadrito).classList.add('active');
+        }
 
-  <!-- Miembro 3 -->
-  <div class="card">
-    <img src="img/irving.jpg" alt="Irving">
-    <div class="name">Irving</div>
-    <div class="role">Diseñador UX/UI</div>
-    <div class="hobbies">Hobbies: Dibujo, Música</div>
-  </div>
+        function endGame() {
+            document.getElementById('cuadrito6').classList.remove('active');
+            document.getElementById('gameOver').style.display = 'block';
+            score = maxScore;
+            updateScore();
+        }
 
-  <!-- Miembro 4 -->
-  <div class="card">
-    <img src="img/aldair.jpg" alt="Aldair Fabricio">
-    <div class="name">Aldair Fabricio</div>
-    <div class="role">Administrador de Base de Datos</div>
-    <div class="hobbies">Hobbies: Programación, Juegos de Mesa</div>
-  </div>
-
-  <!-- Miembro 5 -->
-  <div class="card">
-    <img src="img/david.jpg" alt="David">
-    <div class="name">David</div>
-    <div class="role">Coordinador de Comunicación</div>
-    <div class="hobbies">Hobbies: Lectura, Fotografía</div>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2025 — Equipo PIXES. Todos los derechos reservados.</p>
-</footer>
+        function updateScore() {
+            document.getElementById('score').textContent = 'Puntuación: ' + score + ' / ' + maxScore;
+        }
+    </script>
 </body>
 </html>
-
-
